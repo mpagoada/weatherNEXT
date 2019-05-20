@@ -1,18 +1,24 @@
 // JavaScript File
 /*global $*/
 
-/* $(".enter").click(function(){
+$(".enter").click(function(){
+   var zipcodeInput = $('input').val();
+   $('#zipcode').html(zipcodeInput);
+   var zipcodeUrl = 'https://samples.openweathermap.org/data/2.5/forecast?zip=' + zipcodeInput + '&appid=b6907d289e10d714a6e88b30761fae22';
+  
+   
+   
     $.ajax({
-        url: "https://samples.openweathermap.org/data/2.5/forecast?zip=94040&appid=b6907d289e10d714a6e88b30761fae22",
+        url: zipcodeUrl,
         method: "GET",
         success: function(response) {
-            $("#id").html("<img src='" + response.list.weather.description + "'/>");
+            var minTemp = response.data.list[0].temp_min;
+            var maxTemp = response.data[0].temp_max;
+            var skyLook = response.data[1].description;
+            
+            $('#mintemp').html('minTemp');
+            $('#maxtemp').html('maxTemp');
+            $('#skylook').html('skyLook');
         }
     });
-}); */
-
-var zipcodeInput = $("input").val();
-
-$(".enter").click(function(){
-    $("#zipcode").html(zipcodeInput);
 });
