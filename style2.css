@@ -2,8 +2,9 @@ body {
     text-align: center;
 }
 
-.two {
-    
+#wdesc {
+    color: green;
+    font-size: 20px;
 }
 
 .return {
